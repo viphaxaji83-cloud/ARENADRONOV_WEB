@@ -3,7 +3,6 @@ import {
   Trophy,
   ClipboardCheck,
   Users,
-  Newspaper,
   Plus,
   AlertCircle,
   ArrowRight,
@@ -17,7 +16,6 @@ import { StatCard } from "@/components/ui/stat";
 import { TournamentStatusBadge, RegistrationStatusBadge } from "@/components/ui/status-badge";
 import { tournaments } from "@/lib/data/tournaments";
 import { registrations } from "@/lib/data/results";
-import { news } from "@/lib/data/news";
 import { pilots, getPilotById } from "@/lib/data/pilots";
 import { getTournamentById } from "@/lib/data/tournaments";
 import { formatDate, formatRelative } from "@/lib/utils";
@@ -27,7 +25,6 @@ export default function AdminDashboardPage() {
     ["registration_open", "registration_closed", "ongoing", "published"].includes(t.status),
   ).length;
   const pending = registrations.filter((r) => r.status === "pending").length;
-  const newsCount = news.filter((n) => n.status === "published").length;
 
   const recentRegs = [...registrations]
     .sort((a, b) => new Date(b.submittedAt).getTime() - new Date(a.submittedAt).getTime())
@@ -47,24 +44,16 @@ export default function AdminDashboardPage() {
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Сводка</h1>
           <p className="text-fg-secondary mt-1">Состояние платформы и быстрые действия</p>
         </div>
-        <div className="flex gap-2">
-          <Link href="/admin/news">
-            <Button variant="secondary" size="sm">
-              <Newspaper className="h-3.5 w-3.5" />
-              Новость
-            </Button>
-          </Link>
-          <Link href="/admin/tournaments/new">
-            <Button size="sm">
-              <Plus className="h-3.5 w-3.5" />
-              Новый турнир
-            </Button>
-          </Link>
-        </div>
+        <Link href="/admin/tournaments/new">
+          <Button size="sm">
+            <Plus className="h-3.5 w-3.5" />
+            Новый турнир
+          </Button>
+        </Link>
       </header>
 
       {/* KPIs */}
-      <section className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
         <StatCard
           label="Активные турниры"
           value={active}
@@ -82,13 +71,6 @@ export default function AdminDashboardPage() {
           value={pilots.length}
           hint="в активном составе"
           icon={<Users className="h-4 w-4" />}
-        />
-        <StatCard
-          label="Новости"
-          value={newsCount}
-          hint="опубликовано"
-          icon={<Newspaper className="h-4 w-4" />}
-          trend={3}
         />
       </section>
 

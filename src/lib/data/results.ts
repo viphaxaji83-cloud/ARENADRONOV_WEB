@@ -82,16 +82,6 @@ export const notifications: NotificationItem[] = [
     readAt: "2026-02-09T13:20:00+03:00",
     createdAt: "2026-02-09T12:05:00+03:00",
   },
-  {
-    id: "no4",
-    userId: "p7",
-    type: "news_digest",
-    title: "Дайджест недели",
-    body: "5 новостей за неделю: интервью с Vortex, открытие сезона и другое.",
-    link: "/news",
-    readAt: "2026-03-19T08:00:00+03:00",
-    createdAt: "2026-03-18T20:00:00+03:00",
-  },
 ];
 
 export function getResultsForTournament(tournamentId: string): ResultEntry[] {
