@@ -59,7 +59,7 @@ export function PublicFooter() {
         </div>
 
         <div className="mt-10 pt-6 border-t border-border-subtle flex flex-col sm:flex-row sm:justify-between gap-3 text-xs text-fg-muted">
-          <p>© 2026 ArenaDronov. Все права защищены.</p>
+          <p>© 2026 АРЕНА ДРОНОВ. Все права защищены.</p>
           <p className="font-mono">v0.1.0 · MVP</p>
         </div>
       </div>

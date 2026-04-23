@@ -28,8 +28,8 @@ export default function HomePage() {
     <div>
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-border-subtle">
-        <div className="absolute inset-0 bg-grid opacity-40" />
-        <div className="absolute inset-0 bg-spotlight" />
+        <div className="absolute inset-0 bg-grid opacity-60" />
+        <div className="absolute inset-0 bg-spotlight-strong" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-bg-base" />
 
         <div className="container relative pt-16 pb-20 sm:pt-20 sm:pb-28 lg:pt-28 lg:pb-32">
@@ -40,9 +40,9 @@ export default function HomePage() {
                 Сезон 2026 · Открытие 9 мая
               </Badge>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.05]">
+              <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[0.95] uppercase">
                 Турниры по{" "}
-                <span className="bg-gradient-to-r from-accent via-accent-hover to-accent bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-accent via-accent2 to-accent bg-clip-text text-transparent text-glow">
                   дрон-рейсингу
                 </span>
                 <br />
@@ -96,7 +96,7 @@ export default function HomePage() {
             {/* Featured tournament card */}
             <div className="lg:col-span-5">
               <Link href={`/tournaments/${featured.slug}`} className="group block">
-                <Card className="overflow-hidden border-accent/20 shadow-glow hover:border-accent transition-all">
+                <Card className="overflow-hidden border-accent/30 shadow-glow-strong hover:border-accent transition-all">
                   <div className="relative aspect-[4/3] sm:aspect-[16/10] overflow-hidden bg-bg-elevated">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
@@ -114,7 +114,7 @@ export default function HomePage() {
                       <p className="text-[10px] font-mono uppercase tracking-widest text-accent mb-1.5">
                         Ближайший этап
                       </p>
-                      <h3 className="text-2xl font-bold text-fg-primary mb-2 leading-tight">
+                      <h3 className="font-display text-2xl font-bold text-fg-primary mb-2 leading-tight uppercase">
                         {featured.title}
                       </h3>
                       <p className="text-sm text-fg-secondary line-clamp-2">{featured.subtitle}</p>
@@ -261,13 +261,13 @@ export default function HomePage() {
       {/* Recent results banner */}
       {recentTournament && (
         <section className="container pb-16 sm:pb-24">
-          <Card className="overflow-hidden border-accent/15">
+          <Card className="overflow-hidden border-accent2/30 shadow-glow-magenta">
             <div className="grid lg:grid-cols-2">
               <div className="p-6 sm:p-8 flex flex-col justify-center gap-4">
                 <Badge variant="accent" dot className="self-start">
                   Свежие результаты
                 </Badge>
-                <h3 className="text-2xl sm:text-3xl font-bold tracking-tight">
+                <h3 className="font-display text-3xl sm:text-4xl font-bold tracking-tight uppercase">
                   {recentTournament.title}
                 </h3>
                 <p className="text-fg-secondary">

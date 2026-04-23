@@ -7,9 +7,11 @@ export const metadata = { title: "Вход" };
 
 export default function LoginPage() {
   return (
-    <Card className="p-8 sm:p-10 shadow-xl">
+    <Card className="p-8 sm:p-10 shadow-glow border-accent/20">
       <div className="mb-8 text-center">
-        <h1 className="text-2xl font-bold tracking-tight mb-2">С возвращением</h1>
+        <h1 className="font-display text-3xl font-bold tracking-tight mb-2 uppercase">
+          С возвращением
+        </h1>
         <p className="text-sm text-fg-secondary">
           Войдите, чтобы попасть в кабинет пилота
         </p>

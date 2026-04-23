@@ -7,9 +7,11 @@ export const metadata = { title: "Регистрация" };
 
 export default function RegisterPage() {
   return (
-    <Card className="p-8 sm:p-10 shadow-xl">
+    <Card className="p-8 sm:p-10 shadow-glow border-accent/20">
       <div className="mb-8 text-center">
-        <h1 className="text-2xl font-bold tracking-tight mb-2">Создайте аккаунт пилота</h1>
+        <h1 className="font-display text-3xl font-bold tracking-tight mb-2 uppercase">
+          Создайте аккаунт пилота
+        </h1>
         <p className="text-sm text-fg-secondary">
           Заявки на турниры, рейтинг сезона, профиль на платформе
         </p>

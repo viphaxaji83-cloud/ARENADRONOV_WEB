@@ -9,7 +9,7 @@ export default function AdminSettingsPage() {
     <div className="space-y-6 max-w-3xl">
       <header>
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Настройки платформы</h1>
-        <p className="text-fg-secondary mt-1">Глобальные параметры ArenaDronov</p>
+        <p className="text-fg-secondary mt-1">Глобальные параметры АРЕНА ДРОНОВ</p>
       </header>
 
       <Card>
@@ -18,7 +18,7 @@ export default function AdminSettingsPage() {
         </CardHeader>
         <CardContent className="space-y-5">
           <Field label="Название платформы">
-            <Input defaultValue="ArenaDronov" />
+            <Input defaultValue="АРЕНА ДРОНОВ" />
           </Field>
           <Field label="Контактный email">
             <Input type="email" defaultValue="hello@arenadronov.test" />

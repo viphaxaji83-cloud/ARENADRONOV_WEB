@@ -6,14 +6,14 @@ export const news: NewsPost[] = [
     slug: "season-2026-opens",
     title: "Сезон 2026 официально открыт: что изменилось в регламенте",
     excerpt:
-      "С 15 января стартует новый сезон ArenaDronov. Разбираем главные изменения: новая шкала очков, обновлённые требования к технике и расширенный календарь этапов.",
+      "С 15 января стартует новый сезон АРЕНА ДРОНОВ. Разбираем главные изменения: новая шкала очков, обновлённые требования к технике и расширенный календарь этапов.",
     coverUrl:
       "https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=1600&q=70",
     body: "Полный текст публикации...",
     tags: ["сезон", "регламент"],
     status: "published",
     publishedAt: "2026-01-12T10:00:00+03:00",
-    authorName: "Редакция ArenaDronov",
+    authorName: "Редакция АРЕНА ДРОНОВ",
   },
   {
     id: "n2",
@@ -27,7 +27,7 @@ export const news: NewsPost[] = [
     tags: ["турнир", "москва"],
     status: "published",
     publishedAt: "2026-02-20T15:30:00+03:00",
-    authorName: "Редакция ArenaDronov",
+    authorName: "Редакция АРЕНА ДРОНОВ",
     relatedTournamentId: "t1",
   },
   {
@@ -42,7 +42,7 @@ export const news: NewsPost[] = [
     tags: ["результаты", "tinywhoop"],
     status: "published",
     publishedAt: "2026-02-09T12:00:00+03:00",
-    authorName: "Редакция ArenaDronov",
+    authorName: "Редакция АРЕНА ДРОНОВ",
     relatedTournamentId: "t5",
   },
   {

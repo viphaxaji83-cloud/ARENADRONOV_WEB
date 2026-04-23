@@ -40,6 +40,14 @@ const config: Config = {
           muted: "hsl(var(--color-accent-muted) / <alpha-value>)",
           fg: "hsl(var(--color-accent-fg) / <alpha-value>)",
         },
+        accent2: {
+          DEFAULT: "hsl(var(--color-accent-2) / <alpha-value>)",
+          muted: "hsl(var(--color-accent-2-muted) / <alpha-value>)",
+        },
+        accent3: {
+          DEFAULT: "hsl(var(--color-accent-3) / <alpha-value>)",
+          muted: "hsl(var(--color-accent-3-muted) / <alpha-value>)",
+        },
         success: {
           DEFAULT: "hsl(var(--color-success) / <alpha-value>)",
           muted: "hsl(var(--color-success-muted) / <alpha-value>)",
@@ -78,9 +86,13 @@ const config: Config = {
         lg: "var(--shadow-lg)",
         xl: "var(--shadow-xl)",
         glow: "var(--shadow-glow)",
+        "glow-strong": "var(--shadow-glow-strong)",
+        "glow-magenta": "var(--shadow-glow-magenta)",
       },
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "system-ui", "sans-serif"],
+        wordmark: ["var(--font-wordmark)", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       fontSize: {

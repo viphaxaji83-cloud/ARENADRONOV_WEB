@@ -11,7 +11,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
         <div className="w-full max-w-md">{children}</div>
       </main>
       <footer className="container py-6 text-center text-xs text-fg-muted">
-        © 2026 ArenaDronov ·{" "}
+        © 2026 АРЕНА ДРОНОВ ·{" "}
         <Link href="/" className="hover:text-fg-secondary">На главную</Link>
       </footer>
     </div>

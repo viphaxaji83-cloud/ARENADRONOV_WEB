@@ -3,7 +3,7 @@ import { tournaments } from "@/lib/data/tournaments";
 
 export const metadata = {
   title: "Турниры",
-  description: "Все турниры платформы ArenaDronov",
+  description: "Все турниры платформы АРЕНА ДРОНОВ",
 };
 
 export default function TournamentsPage() {

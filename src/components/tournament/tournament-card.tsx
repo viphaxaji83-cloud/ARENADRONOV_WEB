@@ -25,7 +25,7 @@ export function TournamentCard({
       href={`/tournaments/${tournament.slug}`}
       className={cn("group block", className)}
     >
-      <Card className="overflow-hidden hover:border-accent/50 transition-all duration-200 group-hover:shadow-lg h-full flex flex-col">
+      <Card className="overflow-hidden hover:border-accent/60 transition-all duration-200 group-hover:shadow-glow h-full flex flex-col">
         <div
           className={cn(
             "relative w-full overflow-hidden bg-bg-elevated",
@@ -51,7 +51,7 @@ export function TournamentCard({
             <p className="text-[10px] font-mono uppercase tracking-widest text-fg-secondary mb-1">
               {formatLabel[tournament.format]}
             </p>
-            <h3 className="text-lg sm:text-xl font-bold text-fg-primary tracking-tight leading-tight line-clamp-2 group-hover:text-accent transition-colors">
+            <h3 className="font-display text-lg sm:text-xl font-bold text-fg-primary tracking-tight leading-tight line-clamp-2 group-hover:text-accent transition-colors uppercase">
               {tournament.title}
             </h3>
           </div>
