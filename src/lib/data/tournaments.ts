@@ -75,8 +75,7 @@ export const tournaments: Tournament[] = [
     slug: "kazan-multiclass-open",
     title: "Kazan Multi-Class Open",
     subtitle: "Турнир в трёх классах за один уикенд",
-    coverUrl:
-      "https://images.unsplash.com/photo-1521405617584-1d9867ec2e15?auto=format&fit=crop&w=1600&q=70",
+    coverUrl: "/images/tournaments/kazan-multiclass-open.svg",
     description:
       "Три класса (5 дюймов, cinewhoop, tinywhoop) — три параллельных зачёта. Один из крупнейших региональных турниров.",
     rules: "Регламент мультиклассового зачёта. Подробности в стартовом пакете.",

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Calendar, MapPin, Trophy, Zap, Award, Users } from "lucide-react";
+import { ArrowRight, MapPin, Trophy, Zap, Award, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -9,7 +9,6 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { TournamentCard } from "@/components/tournament/tournament-card";
 import { TournamentStatusBadge } from "@/components/ui/status-badge";
 import { tournaments } from "@/lib/data/tournaments";
-import { news } from "@/lib/data/news";
 import { ranking } from "@/lib/data/results";
 import { getPilotById } from "@/lib/data/pilots";
 import { formatDate, formatLapTime } from "@/lib/utils";
@@ -21,7 +20,6 @@ export default function HomePage() {
     .filter((t) => ["registration_open", "registration_closed", "published"].includes(t.status))
     .slice(0, 3);
   const topRanking = ranking.slice(0, 5);
-  const latestNews = news.slice(0, 3);
   const recentTournament = tournaments.find((t) => t.status === "finished");
 
   return (
@@ -50,7 +48,7 @@ export default function HomePage() {
               </h1>
 
               <p className="text-lg sm:text-xl text-fg-secondary max-w-2xl">
-                Расписание этапов, регистрация, рейтинг пилотов и новости сцены. Платформа,
+                Расписание этапов, регистрация, рейтинг пилотов и результаты заездов. Платформа,
                 в которой удобно и пилотам, и организаторам.
               </p>
 
@@ -93,7 +91,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Featured tournament card */}
             <div className="lg:col-span-5">
               <Link href={`/tournaments/${featured.slug}`} className="group block">
                 <Card className="overflow-hidden border-accent/30 shadow-glow-strong hover:border-accent transition-all">
@@ -165,97 +162,58 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Leaderboard + news */}
+      {/* Leaderboard */}
       <section className="container py-16 sm:py-20 border-t border-border-subtle">
-        <div className="grid gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-7">
-            <SectionHeading
-              eyebrow="Сезон 2026"
-              title="Топ пилотов"
-              description="Рейтинг по сумме очков сезона"
-              href="/leaderboard"
-            />
-            <Card className="overflow-hidden">
-              <ul className="divide-y divide-border-subtle">
-                {topRanking.map((entry, i) => {
-                  const pilot = getPilotById(entry.pilotId)!;
-                  const medalColor =
-                    i === 0
-                      ? "bg-yellow-500/15 text-yellow-400 border-yellow-500/30"
-                      : i === 1
-                        ? "bg-zinc-300/15 text-zinc-200 border-zinc-400/30"
-                        : i === 2
-                          ? "bg-orange-600/15 text-orange-400 border-orange-600/30"
-                          : "bg-bg-elevated text-fg-secondary border-border-subtle";
-                  return (
-                    <li key={entry.pilotId}>
-                      <Link
-                        href={`/pilots/${pilot.handle}`}
-                        className="flex items-center gap-4 px-4 sm:px-5 py-3.5 hover:bg-bg-elevated/50 transition-colors"
-                      >
-                        <div
-                          className={`h-9 w-9 rounded-md border flex items-center justify-center text-sm font-bold tabular ${medalColor}`}
-                        >
-                          {entry.rank}
-                        </div>
-                        <Avatar src={pilot.avatarUrl} name={pilot.displayName} size="md" />
-                        <div className="flex-1 min-w-0">
-                          <p className="text-sm font-semibold text-fg-primary truncate">
-                            {pilot.displayName}
-                          </p>
-                          <p className="text-xs text-fg-muted truncate">
-                            @{pilot.handle} · {pilot.teamName ?? "Solo"}
-                          </p>
-                        </div>
-                        <div className="text-right shrink-0">
-                          <p className="text-base font-bold text-fg-primary tabular">
-                            {entry.points}
-                          </p>
-                          <p className="text-[10px] uppercase tracking-wider text-fg-muted">очков</p>
-                        </div>
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </Card>
-          </div>
-
-          <div className="lg:col-span-5">
-            <SectionHeading
-              eyebrow="Сцена"
-              title="Последние новости"
-              href="/news"
-            />
-            <div className="flex flex-col gap-4">
-              {latestNews.map((post) => (
-                <Link key={post.id} href={`/news/${post.slug}`} className="group block">
-                  <Card className="overflow-hidden hover:border-accent/40 transition-colors">
-                    <div className="grid grid-cols-3 gap-0">
-                      <div className="aspect-[4/3] overflow-hidden bg-bg-elevated relative">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={post.coverUrl}
-                          alt={post.title}
-                          className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
-                      </div>
-                      <div className="col-span-2 p-4 flex flex-col justify-center gap-1.5">
-                        <p className="text-[10px] uppercase tracking-wider text-fg-muted">
-                          {formatDate(post.publishedAt, { month: "short", day: "numeric" })}
-                        </p>
-                        <h4 className="text-sm font-semibold text-fg-primary line-clamp-2 group-hover:text-accent transition-colors">
-                          {post.title}
-                        </h4>
-                        <p className="text-xs text-fg-secondary line-clamp-2">{post.excerpt}</p>
-                      </div>
+        <SectionHeading
+          eyebrow="Сезон 2026"
+          title="Топ пилотов"
+          description="Рейтинг по сумме очков сезона"
+          href="/leaderboard"
+        />
+        <Card className="overflow-hidden">
+          <ul className="divide-y divide-border-subtle">
+            {topRanking.map((entry, i) => {
+              const pilot = getPilotById(entry.pilotId)!;
+              const medalColor =
+                i === 0
+                  ? "bg-yellow-500/15 text-yellow-400 border-yellow-500/30"
+                  : i === 1
+                    ? "bg-zinc-300/15 text-zinc-200 border-zinc-400/30"
+                    : i === 2
+                      ? "bg-orange-600/15 text-orange-400 border-orange-600/30"
+                      : "bg-bg-elevated text-fg-secondary border-border-subtle";
+              return (
+                <li key={entry.pilotId}>
+                  <Link
+                    href={`/pilots/${pilot.handle}`}
+                    className="flex items-center gap-4 px-4 sm:px-5 py-3.5 hover:bg-bg-elevated/50 transition-colors"
+                  >
+                    <div
+                      className={`h-9 w-9 rounded-md border flex items-center justify-center text-sm font-bold tabular ${medalColor}`}
+                    >
+                      {entry.rank}
                     </div>
-                  </Card>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
+                    <Avatar src={pilot.avatarUrl} name={pilot.displayName} size="md" />
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-semibold text-fg-primary truncate">
+                        {pilot.displayName}
+                      </p>
+                      <p className="text-xs text-fg-muted truncate">
+                        @{pilot.handle} · {pilot.teamName ?? "Solo"}
+                      </p>
+                    </div>
+                    <div className="text-right shrink-0">
+                      <p className="text-base font-bold text-fg-primary tabular">
+                        {entry.points}
+                      </p>
+                      <p className="text-[10px] uppercase tracking-wider text-fg-muted">очков</p>
+                    </div>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </Card>
       </section>
 
       {/* Recent results banner */}

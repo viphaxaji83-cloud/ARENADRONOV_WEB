@@ -9,7 +9,7 @@ export function PublicFooter() {
           <div className="md:col-span-4 flex flex-col gap-4">
             <Logo />
             <p className="text-sm text-fg-secondary max-w-sm">
-              Платформа турниров по дрон-рейсингу. Расписание, регистрация, рейтинг и сцена в одном месте.
+              Платформа турниров по дрон-рейсингу. Расписание, регистрация и рейтинг в одном месте.
             </p>
           </div>
 
@@ -21,7 +21,6 @@ export function PublicFooter() {
               <li><Link href="/tournaments" className="text-fg-secondary hover:text-fg-primary">Турниры</Link></li>
               <li><Link href="/leaderboard" className="text-fg-secondary hover:text-fg-primary">Рейтинг</Link></li>
               <li><Link href="/pilots" className="text-fg-secondary hover:text-fg-primary">Пилоты</Link></li>
-              <li><Link href="/news" className="text-fg-secondary hover:text-fg-primary">Новости</Link></li>
             </ul>
           </div>
 

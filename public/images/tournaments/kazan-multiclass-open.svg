@@ -1,0 +1,61 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#080B12"/>
+  <rect width="1600" height="900" fill="url(#bgGlow)"/>
+  <rect x="66" y="66" width="1468" height="768" rx="36" fill="#0D1220" stroke="rgba(0, 234, 255, 0.18)"/>
+  <rect x="66" y="66" width="1468" height="768" rx="36" fill="url(#panelGlow)"/>
+
+  <circle cx="1180" cy="260" r="220" fill="url(#cyanOrb)" opacity="0.95"/>
+  <circle cx="1335" cy="650" r="190" fill="url(#amberOrb)" opacity="0.55"/>
+  <circle cx="420" cy="230" r="170" fill="url(#violetOrb)" opacity="0.35"/>
+
+  <g opacity="0.9">
+    <circle cx="1095" cy="285" r="120" stroke="#10E7FF" stroke-width="20"/>
+    <circle cx="1095" cy="285" r="82" stroke="#10E7FF" stroke-opacity="0.65" stroke-width="10"/>
+    <path d="M972 285H1218" stroke="#10E7FF" stroke-opacity="0.7" stroke-width="10" stroke-linecap="round"/>
+    <path d="M1095 162V408" stroke="#10E7FF" stroke-opacity="0.7" stroke-width="10" stroke-linecap="round"/>
+  </g>
+
+  <g opacity="0.95">
+    <rect x="955" y="160" width="280" height="22" rx="11" fill="#D7F4FF" fill-opacity="0.75"/>
+    <rect x="955" y="387" width="280" height="22" rx="11" fill="#D7F4FF" fill-opacity="0.75"/>
+    <rect x="970" y="175" width="22" height="220" rx="11" fill="#D7F4FF" fill-opacity="0.75"/>
+    <rect x="1198" y="175" width="22" height="220" rx="11" fill="#D7F4FF" fill-opacity="0.75"/>
+  </g>
+
+  <g opacity="0.55">
+    <path d="M220 690C305 620 375 588 468 590C558 592 630 638 700 702" stroke="#10E7FF" stroke-width="16" stroke-linecap="round"/>
+    <path d="M212 744C317 666 411 635 520 641C626 646 712 695 792 772" stroke="#FF8A2C" stroke-width="10" stroke-linecap="round"/>
+  </g>
+
+  <rect x="140" y="128" width="242" height="54" rx="27" fill="#0D1625" stroke="#10E7FF" stroke-opacity="0.55"/>
+  <circle cx="182" cy="155" r="8" fill="#10E7FF"/>
+  <text x="206" y="164" fill="#10E7FF" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" letter-spacing="2">FEATURED</text>
+
+  <text x="140" y="555" fill="#EAF6FF" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" letter-spacing="10">MIXED</text>
+  <text x="140" y="645" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="86" font-weight="900">KAZAN MULTI-CLASS</text>
+  <text x="140" y="735" fill="#10E7FF" font-family="Arial, Helvetica, sans-serif" font-size="86" font-weight="900">OPEN</text>
+  <text x="140" y="796" fill="#B8C6D8" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="500">THREE CLASSES. ONE WEEKEND. INNOPOLIS ARENA.</text>
+
+  <defs>
+    <radialGradient id="bgGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1050 160) rotate(128) scale(1028 1469.56)">
+      <stop stop-color="#0D1D2E"/>
+      <stop offset="1" stop-color="#080B12"/>
+    </radialGradient>
+    <radialGradient id="panelGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1262 192) rotate(134.359) scale(729.765 1003.22)">
+      <stop stop-color="#0E2538" stop-opacity="0.88"/>
+      <stop offset="1" stop-color="#0D1220" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cyanOrb" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1180 260) rotate(90) scale(220)">
+      <stop stop-color="#10E7FF" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#10E7FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="amberOrb" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1335 650) rotate(90) scale(190)">
+      <stop stop-color="#FF8A2C" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#FF8A2C" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="violetOrb" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(420 230) rotate(90) scale(170)">
+      <stop stop-color="#8B5CFF" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#8B5CFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

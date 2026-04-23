@@ -4,12 +4,11 @@ import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X, User2 } from "lucide-react";
-import { Logo } from "@/components/brand/logo";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { href: "/news", label: "Новости" },
+  { href: "/", label: "Главная" },
   { href: "/tournaments", label: "Турниры" },
   { href: "/leaderboard", label: "Рейтинг" },
   { href: "/pilots", label: "Пилоты" },
@@ -24,26 +23,23 @@ export function PublicNav() {
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-border-subtle bg-bg-base/80 backdrop-blur-lg">
-      <div className="container flex h-16 items-center justify-between">
-        <div className="flex items-center gap-8">
-          <Logo />
-          <nav className="hidden md:flex items-center gap-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  "px-3 py-2 text-sm font-medium rounded-md transition-colors",
-                  isActive(item.href)
-                    ? "text-fg-primary bg-bg-elevated"
-                    : "text-fg-secondary hover:text-fg-primary",
-                )}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
+      <div className="container flex h-16 items-center justify-end md:justify-between">
+        <nav className="hidden md:flex items-center gap-1">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={cn(
+                "px-3 py-2 text-sm font-medium rounded-md transition-colors",
+                isActive(item.href)
+                  ? "text-fg-primary bg-bg-elevated"
+                  : "text-fg-secondary hover:text-fg-primary",
+              )}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
 
         <div className="hidden md:flex items-center gap-3">
           <Link href="/login">

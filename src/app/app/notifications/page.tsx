@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Bell, Check, CheckCheck, ClipboardCheck, Trophy, Newspaper, AlertTriangle } from "lucide-react";
+import { Bell, Check, CheckCheck, ClipboardCheck, Trophy, AlertTriangle } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { EmptyState } from "@/components/ui/empty";
@@ -14,7 +14,6 @@ const typeIcon: Record<NotificationType, React.ReactNode> = {
   registration_rejected: <AlertTriangle className="h-4 w-4" />,
   tournament_upcoming: <Trophy className="h-4 w-4" />,
   result_published: <Trophy className="h-4 w-4" />,
-  news_digest: <Newspaper className="h-4 w-4" />,
 };
 
 const typeColor: Record<NotificationType, string> = {
@@ -22,7 +21,6 @@ const typeColor: Record<NotificationType, string> = {
   registration_rejected: "text-danger bg-danger-muted",
   tournament_upcoming: "text-accent bg-accent-muted",
   result_published: "text-info bg-info-muted",
-  news_digest: "text-fg-secondary bg-bg-elevated",
 };
 
 export default function AppNotificationsPage() {

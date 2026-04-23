@@ -16,14 +16,11 @@ export type RegistrationStatus = "pending" | "approved" | "rejected" | "waitlist
 
 export type HeatStatus = "scheduled" | "running" | "finished" | "cancelled";
 
-export type NewsStatus = "draft" | "published";
-
 export type NotificationType =
   | "registration_approved"
   | "registration_rejected"
   | "tournament_upcoming"
-  | "result_published"
-  | "news_digest";
+  | "result_published";
 
 export interface Pilot {
   id: string;
@@ -99,20 +96,6 @@ export interface RankingEntry {
   wins: number;
   podiums: number;
   trend: number;
-}
-
-export interface NewsPost {
-  id: string;
-  slug: string;
-  title: string;
-  excerpt: string;
-  coverUrl: string;
-  body: string;
-  tags: string[];
-  status: NewsStatus;
-  publishedAt: string;
-  authorName: string;
-  relatedTournamentId?: string;
 }
 
 export interface RegistrationEntry {
