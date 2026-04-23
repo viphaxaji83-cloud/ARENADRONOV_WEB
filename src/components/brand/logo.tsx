@@ -13,17 +13,16 @@ export function Logo({
   variant?: "full" | "mark";
 }) {
   const sizes = {
-    sm: { box: "h-8 w-8", text: "text-[11px]", subtext: "text-[8px]" },
-    md: { box: "h-10 w-10", text: "text-[13px]", subtext: "text-[9px]" },
-    lg: { box: "h-12 w-12", text: "text-[15px]", subtext: "text-[10px]" },
+    sm: { box: "h-8 w-8", text: "text-sm" },
+    md: { box: "h-10 w-10", text: "text-base" },
+    lg: { box: "h-12 w-12", text: "text-lg" },
   }[size];
 
   return (
     <Link href={href} className={cn("inline-flex items-center gap-2.5 group", className)}>
       <span
         className={cn(
-          "relative inline-flex items-center justify-center shrink-0",
-          "transition-transform group-hover:scale-105",
+          "relative inline-flex items-center justify-center shrink-0 transition-transform group-hover:scale-105",
           sizes.box,
         )}
         aria-hidden="true"
@@ -32,18 +31,15 @@ export function Logo({
           viewBox="0 0 40 40"
           className="absolute inset-0 h-full w-full"
           fill="none"
-          stroke="currentColor"
         >
-          {/* Triangular badge — neon outline */}
+          {/* Triangular badge — purple outline with soft glow */}
           <path
             d="M20 3 L36 33 L4 33 Z"
-            fill="hsl(var(--color-bg-base))"
+            fill="hsl(var(--color-bg-elevated))"
             stroke="hsl(var(--color-accent))"
             strokeWidth="1.6"
             strokeLinejoin="round"
-            style={{
-              filter: "drop-shadow(0 0 6px hsl(var(--color-accent) / 0.6))",
-            }}
+            style={{ filter: "drop-shadow(0 0 6px hsl(var(--color-accent) / 0.55))" }}
           />
           {/* Drone silhouette — 4 motors + body */}
           <g
@@ -54,33 +50,22 @@ export function Logo({
           >
             <line x1="13" y1="20" x2="27" y2="20" />
             <line x1="20" y1="16" x2="20" y2="24" />
-            <circle cx="13" cy="20" r="2.2" />
-            <circle cx="27" cy="20" r="2.2" />
-            <circle cx="20" cy="16" r="2.2" />
-            <circle cx="20" cy="24" r="2.2" />
+            <circle cx="13" cy="20" r="2.2" fill="hsl(var(--color-bg-elevated))" />
+            <circle cx="27" cy="20" r="2.2" fill="hsl(var(--color-bg-elevated))" />
+            <circle cx="20" cy="16" r="2.2" fill="hsl(var(--color-bg-elevated))" />
+            <circle cx="20" cy="24" r="2.2" fill="hsl(var(--color-bg-elevated))" />
           </g>
         </svg>
       </span>
 
       {variant === "full" && (
-        <span className="flex flex-col leading-none">
-          <span
-            className={cn(
-              "font-wordmark font-normal tracking-[0.12em] uppercase text-fg-primary",
-              sizes.text,
-            )}
-          >
-            Арена
-          </span>
-          <span
-            className={cn(
-              "font-wordmark font-normal tracking-[0.18em] uppercase text-accent text-glow",
-              sizes.subtext,
-              "mt-0.5",
-            )}
-          >
-            Дронов
-          </span>
+        <span
+          className={cn(
+            "font-wordmark font-semibold tracking-tight text-fg-primary leading-none",
+            sizes.text,
+          )}
+        >
+          Арена<span className="text-accent">.</span>дронов
         </span>
       )}
     </Link>

@@ -51,7 +51,7 @@ export function TournamentCard({
             <p className="text-[10px] font-mono uppercase tracking-widest text-fg-secondary mb-1">
               {formatLabel[tournament.format]}
             </p>
-            <h3 className="font-display text-lg sm:text-xl font-bold text-fg-primary tracking-tight leading-tight line-clamp-2 group-hover:text-accent transition-colors uppercase">
+            <h3 className="font-display text-lg sm:text-xl font-semibold text-fg-primary tracking-tight leading-tight line-clamp-2 group-hover:text-accent transition-colors">
               {tournament.title}
             </h3>
           </div>

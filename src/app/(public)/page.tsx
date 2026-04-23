@@ -40,9 +40,9 @@ export default function HomePage() {
                 Сезон 2026 · Открытие 9 мая
               </Badge>
 
-              <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight leading-[0.95] uppercase">
+              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-tight leading-[1]">
                 Турниры по{" "}
-                <span className="bg-gradient-to-r from-accent via-accent2 to-accent bg-clip-text text-transparent text-glow">
+                <span className="bg-gradient-to-r from-accent via-accent2 to-accent bg-clip-text text-transparent">
                   дрон-рейсингу
                 </span>
                 <br />
@@ -114,7 +114,7 @@ export default function HomePage() {
                       <p className="text-[10px] font-mono uppercase tracking-widest text-accent mb-1.5">
                         Ближайший этап
                       </p>
-                      <h3 className="font-display text-2xl font-bold text-fg-primary mb-2 leading-tight uppercase">
+                      <h3 className="font-display text-2xl font-semibold text-fg-primary mb-2 leading-tight">
                         {featured.title}
                       </h3>
                       <p className="text-sm text-fg-secondary line-clamp-2">{featured.subtitle}</p>
@@ -267,7 +267,7 @@ export default function HomePage() {
                 <Badge variant="accent" dot className="self-start">
                   Свежие результаты
                 </Badge>
-                <h3 className="font-display text-3xl sm:text-4xl font-bold tracking-tight uppercase">
+                <h3 className="font-display text-3xl sm:text-4xl font-semibold tracking-tight">
                   {recentTournament.title}
                 </h3>
                 <p className="text-fg-secondary">
