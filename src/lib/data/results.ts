@@ -1,6 +1,6 @@
 import type { ResultEntry, RankingEntry, RegistrationEntry, NotificationItem } from "@/lib/types";
 
-// Results from finished tournament t5 (Winter Indoor)
+// Results from finished tournaments
 export const results: ResultEntry[] = [
   { id: "r1", tournamentId: "t5", pilotId: "p4", placement: 1, bestLapMs: 18420, totalTimeMs: 142500, points: 100, dnf: false, dns: false },
   { id: "r2", tournamentId: "t5", pilotId: "p1", placement: 2, bestLapMs: 18600, totalTimeMs: 142680, points: 80, dnf: false, dns: false },
@@ -10,6 +10,18 @@ export const results: ResultEntry[] = [
   { id: "r6", tournamentId: "t5", pilotId: "p8", placement: 6, bestLapMs: 19450, totalTimeMs: 147800, points: 32, dnf: false, dns: false },
   { id: "r7", tournamentId: "t5", pilotId: "p5", placement: 7, bestLapMs: 19620, totalTimeMs: 148500, points: 26, dnf: false, dns: false },
   { id: "r8", tournamentId: "t5", pilotId: "p6", placement: 8, bestLapMs: 19800, totalTimeMs: 149400, points: 21, dnf: false, dns: false },
+  { id: "r13", tournamentId: "t5", pilotId: "p12", placement: 9, bestLapMs: 20020, totalTimeMs: 150100, points: 18, dnf: false, dns: false },
+  { id: "r14", tournamentId: "t5", pilotId: "p14", placement: 10, bestLapMs: 20140, totalTimeMs: 151220, points: 15, dnf: false, dns: false },
+  { id: "r15", tournamentId: "t5", pilotId: "p15", placement: 11, bestLapMs: 20310, totalTimeMs: 152040, points: 12, dnf: false, dns: false },
+  { id: "r16", tournamentId: "t5", pilotId: "p13", placement: 12, bestLapMs: 20560, totalTimeMs: 153800, points: 10, dnf: false, dns: false },
+  { id: "r9", tournamentId: "t9", pilotId: "p1", placement: 1, bestLapMs: 17680, totalTimeMs: 136420, points: 90, dnf: false, dns: false },
+  { id: "r10", tournamentId: "t9", pilotId: "p4", placement: 2, bestLapMs: 17810, totalTimeMs: 137150, points: 70, dnf: false, dns: false },
+  { id: "r11", tournamentId: "t9", pilotId: "p8", placement: 3, bestLapMs: 17940, totalTimeMs: 138200, points: 55, dnf: false, dns: false },
+  { id: "r12", tournamentId: "t9", pilotId: "p3", placement: 4, bestLapMs: 18020, totalTimeMs: 139080, points: 42, dnf: false, dns: false },
+  { id: "r17", tournamentId: "t9", pilotId: "p10", placement: 5, bestLapMs: 18110, totalTimeMs: 139940, points: 34, dnf: false, dns: false },
+  { id: "r18", tournamentId: "t9", pilotId: "p11", placement: 6, bestLapMs: 18240, totalTimeMs: 141100, points: 28, dnf: false, dns: false },
+  { id: "r19", tournamentId: "t9", pilotId: "p16", placement: 7, bestLapMs: 18320, totalTimeMs: 142240, points: 24, dnf: false, dns: false },
+  { id: "r20", tournamentId: "t9", pilotId: "p9", placement: 8, bestLapMs: 18490, totalTimeMs: 143820, points: 20, dnf: false, dns: false },
 ];
 
 // Season ranking — sorted by points
@@ -22,6 +34,14 @@ export const ranking: RankingEntry[] = [
   { pilotId: "p7", rank: 6, previousRank: 8, points: 142, tournamentsPlayed: 3, wins: 0, podiums: 2, trend: 2 },
   { pilotId: "p5", rank: 7, previousRank: 5, points: 128, tournamentsPlayed: 3, wins: 0, podiums: 1, trend: -2 },
   { pilotId: "p6", rank: 8, previousRank: 7, points: 121, tournamentsPlayed: 4, wins: 0, podiums: 1, trend: -1 },
+  { pilotId: "p10", rank: 9, previousRank: 11, points: 109, tournamentsPlayed: 3, wins: 0, podiums: 1, trend: 2 },
+  { pilotId: "p11", rank: 10, previousRank: 9, points: 104, tournamentsPlayed: 4, wins: 0, podiums: 1, trend: -1 },
+  { pilotId: "p16", rank: 11, previousRank: 14, points: 97, tournamentsPlayed: 2, wins: 0, podiums: 1, trend: 3 },
+  { pilotId: "p9", rank: 12, previousRank: 10, points: 92, tournamentsPlayed: 3, wins: 0, podiums: 0, trend: -2 },
+  { pilotId: "p14", rank: 13, previousRank: 15, points: 84, tournamentsPlayed: 2, wins: 0, podiums: 0, trend: 2 },
+  { pilotId: "p12", rank: 14, previousRank: 12, points: 79, tournamentsPlayed: 2, wins: 0, podiums: 0, trend: -2 },
+  { pilotId: "p15", rank: 15, previousRank: 16, points: 73, tournamentsPlayed: 2, wins: 0, podiums: 0, trend: 1 },
+  { pilotId: "p13", rank: 16, previousRank: null, points: 58, tournamentsPlayed: 1, wins: 0, podiums: 0, trend: 0 },
 ];
 
 // Registrations for current user (assume logged-in pilot is p7 / Blitz)

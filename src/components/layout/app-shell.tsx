@@ -19,6 +19,7 @@ import { Avatar } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 import { getPilotById } from "@/lib/data/pilots";
 import { notifications } from "@/lib/data/results";
+import { logoutAction } from "@/app/(auth)/actions";
 
 const navItems = [
   { href: "/app", label: "Главная", icon: LayoutDashboard, exact: true },
@@ -98,9 +99,18 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             href="/"
             className="flex items-center gap-3 px-3 py-2 rounded-md text-sm text-fg-secondary hover:text-fg-primary hover:bg-bg-elevated transition-colors mt-1"
           >
-            <LogOut className="h-4 w-4" />
-            Выйти на сайт
+            <ArrowLeft className="h-4 w-4" />
+            На сайт
           </Link>
+          <form action={logoutAction}>
+            <button
+              type="submit"
+              className="w-full flex items-center gap-3 px-3 py-2 rounded-md text-sm text-fg-secondary hover:text-fg-primary hover:bg-bg-elevated transition-colors mt-1"
+            >
+              <LogOut className="h-4 w-4" />
+              Выйти
+            </button>
+          </form>
         </div>
       </aside>
 
@@ -111,8 +121,15 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             <Logo size="sm" />
           </div>
 
-          <div className="hidden sm:flex items-center gap-2 max-w-md flex-1 lg:max-w-lg">
-            <div className="relative w-full">
+          <div className="hidden sm:flex items-center gap-3 flex-1 lg:max-w-3xl">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-1.5 text-sm text-fg-secondary hover:text-fg-primary shrink-0"
+            >
+              <ArrowLeft className="h-3.5 w-3.5" />
+              На сайт
+            </Link>
+            <div className="relative w-full max-w-lg">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-fg-muted" />
               <input
                 placeholder="Поиск турниров, пилотов..."
@@ -122,13 +139,12 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           </div>
 
           <div className="flex items-center gap-2">
-            <Link
-              href="/"
-              className="hidden sm:inline-flex items-center gap-1.5 text-sm text-fg-secondary hover:text-fg-primary"
-            >
-              <ArrowLeft className="h-3.5 w-3.5" />
-              На сайт
-            </Link>
+            <form action={logoutAction} className="hidden sm:block">
+              <button className="inline-flex items-center gap-1.5 text-sm text-fg-secondary hover:text-fg-primary">
+                <LogOut className="h-3.5 w-3.5" />
+                Выйти
+              </button>
+            </form>
             <Link
               href="/app/notifications"
               className="relative inline-flex items-center justify-center h-9 w-9 rounded-md text-fg-secondary hover:text-fg-primary hover:bg-bg-elevated"
