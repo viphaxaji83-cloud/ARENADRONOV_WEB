@@ -9,7 +9,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { TournamentCard } from "@/components/tournament/tournament-card";
 import { TournamentStatusBadge } from "@/components/ui/status-badge";
 import { tournaments } from "@/lib/data/tournaments";
-import { ranking } from "@/lib/data/results";
+import { getResultsForTournament, ranking } from "@/lib/data/results";
 import { getPilotById } from "@/lib/data/pilots";
 import { formatDate, formatLapTime } from "@/lib/utils";
 import { disciplineLabel } from "@/lib/labels";
@@ -21,6 +21,7 @@ export default function HomePage() {
     .slice(0, 3);
   const topRanking = ranking.slice(0, 5);
   const recentTournament = tournaments.find((t) => t.status === "finished");
+  const recentPodium = recentTournament ? getResultsForTournament(recentTournament.id).slice(0, 3) : [];
 
   return (
     <div>
@@ -229,8 +230,7 @@ export default function HomePage() {
                   {recentTournament.title}
                 </h3>
                 <p className="text-fg-secondary">
-                  {recentTournament.subtitle}. Турнир завершён —{" "}
-                  смотрите итоговую таблицу и лучшие круги.
+                  Этап завершён: смотрите итоговый протокол, позиции пилотов и лучшие круги заезда.
                 </p>
                 <div className="flex flex-wrap gap-2 mt-2">
                   <TournamentStatusBadge status={recentTournament.status} />
@@ -249,27 +249,56 @@ export default function HomePage() {
                   </Link>
                 </div>
               </div>
-              <div className="bg-bg-elevated/50 p-6 sm:p-8 grid grid-cols-3 gap-3">
-                {[
-                  { rank: 1, pilotId: "p4", time: 142500 },
-                  { rank: 2, pilotId: "p1", time: 142680 },
-                  { rank: 3, pilotId: "p3", time: 144100 },
-                ].map((r) => {
-                  const pilot = getPilotById(r.pilotId)!;
-                  const colors = ["text-yellow-400", "text-zinc-300", "text-orange-400"];
+              <div className="bg-bg-elevated/50 p-6 sm:p-8 grid gap-3 sm:grid-cols-3">
+                {recentPodium.map((result) => {
+                  const pilot = getPilotById(result.pilotId)!;
+                  const placeColors = ["text-yellow-400", "text-zinc-300", "text-orange-400"];
                   return (
                     <div
-                      key={r.rank}
-                      className="flex flex-col items-center text-center gap-2 p-3 rounded-md bg-bg-surface border border-border-subtle"
+                      key={result.id}
+                      className="flex min-h-[220px] flex-col rounded-md border border-border-subtle bg-bg-surface p-4"
                     >
-                      <div className={`text-3xl font-bold ${colors[r.rank - 1]}`}>{r.rank}</div>
-                      <Avatar src={pilot.avatarUrl} name={pilot.displayName} size="md" />
-                      <p className="text-xs font-medium text-fg-primary truncate max-w-full">
-                        @{pilot.handle}
-                      </p>
-                      <p className="text-[10px] font-mono text-fg-muted tabular">
-                        {formatLapTime(r.time)}
-                      </p>
+                      <div className="flex items-start justify-between gap-3">
+                        <div className={`text-4xl font-bold tabular leading-none ${placeColors[result.placement - 1]}`}>
+                          {result.placement}
+                        </div>
+                        <Badge size="sm" className="border-transparent bg-bg-base/70 text-fg-primary">
+                          +{result.points} очков
+                        </Badge>
+                      </div>
+
+                      <div className="mt-4 flex items-center gap-3">
+                        <Avatar src={pilot.avatarUrl} name={pilot.displayName} size="lg" />
+                        <div className="min-w-0">
+                          <p className="text-sm font-semibold text-fg-primary truncate">
+                            {pilot.displayName}
+                          </p>
+                          <p className="text-xs text-fg-secondary truncate">
+                            @{pilot.handle} · {pilot.city}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="mt-auto pt-4 space-y-2 border-t border-border-subtle">
+                        <div className="flex items-center justify-between gap-4 text-xs">
+                          <span className="text-fg-muted">Команда</span>
+                          <span className="text-fg-primary truncate text-right">
+                            {pilot.teamName ?? "Solo"}
+                          </span>
+                        </div>
+                        <div className="flex items-center justify-between gap-4 text-xs">
+                          <span className="text-fg-muted">Лучший круг</span>
+                          <span className="font-mono text-fg-primary tabular">
+                            {formatLapTime(result.bestLapMs)}
+                          </span>
+                        </div>
+                        <div className="flex items-center justify-between gap-4 text-xs">
+                          <span className="text-fg-muted">Итог</span>
+                          <span className="font-mono text-fg-primary tabular">
+                            {formatLapTime(result.totalTimeMs)}
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   );
                 })}

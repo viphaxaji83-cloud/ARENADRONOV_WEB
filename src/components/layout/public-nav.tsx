@@ -9,8 +9,8 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { href: "/", label: "Главная" },
-  { href: "/tournaments", label: "Турниры" },
   { href: "/leaderboard", label: "Рейтинг" },
+  { href: "/tournaments", label: "Турниры" },
   { href: "/pilots", label: "Пилоты" },
 ];
 

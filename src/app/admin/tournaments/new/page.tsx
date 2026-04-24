@@ -44,7 +44,7 @@ export default function AdminNewTournamentPage() {
         </CardHeader>
         <CardContent className="space-y-5">
           <Field label="Название" required>
-            <Input placeholder="Например: Moscow Spring Cup 2026" />
+            <Input placeholder="Например: Spring Cup 2026" />
           </Field>
           <Field label="Подзаголовок">
             <Input placeholder="Краткое описание одной строкой" />
@@ -68,8 +68,8 @@ export default function AdminNewTournamentPage() {
               </Select>
             </Field>
           </div>
-          <Field label="Локация" required>
-            <Input placeholder="Город, площадка" />
+          <Field label="Площадка" required>
+            <Input placeholder="Название арены или трека" />
           </Field>
           <Field label="Описание" hint="Markdown поддерживается">
             <Textarea rows={6} placeholder="Расскажите о турнире..." />

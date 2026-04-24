@@ -1,19 +1,11 @@
 import Link from "next/link";
-import { Logo } from "@/components/brand/logo";
 
 export function PublicFooter() {
   return (
     <footer className="border-t border-border-subtle bg-bg-surface mt-20">
       <div className="container py-12">
-        <div className="grid gap-10 md:grid-cols-12">
-          <div className="md:col-span-4 flex flex-col gap-4">
-            <Logo />
-            <p className="text-sm text-fg-secondary max-w-sm">
-              Платформа турниров по дрон-рейсингу. Расписание, регистрация и рейтинг в одном месте.
-            </p>
-          </div>
-
-          <div className="md:col-span-2">
+        <div className="grid gap-10 md:grid-cols-8 lg:grid-cols-4">
+          <div>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-fg-muted mb-4">
               Платформа
             </h4>
@@ -24,7 +16,7 @@ export function PublicFooter() {
             </ul>
           </div>
 
-          <div className="md:col-span-2">
+          <div>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-fg-muted mb-4">
               Аккаунт
             </h4>
@@ -35,7 +27,7 @@ export function PublicFooter() {
             </ul>
           </div>
 
-          <div className="md:col-span-2">
+          <div>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-fg-muted mb-4">
               Документы
             </h4>
@@ -46,20 +38,15 @@ export function PublicFooter() {
             </ul>
           </div>
 
-          <div className="md:col-span-2">
+          <div>
             <h4 className="text-xs font-semibold uppercase tracking-wider text-fg-muted mb-4">
               Сезон 2026
             </h4>
             <p className="text-sm text-fg-secondary">
               Открытие сезона <span className="text-fg-primary font-medium">9 мая</span>
             </p>
-            <p className="text-sm text-fg-muted mt-1">Москва · Spring Cup</p>
+            <p className="text-sm text-fg-muted mt-1">Spring Cup 2026</p>
           </div>
-        </div>
-
-        <div className="mt-10 pt-6 border-t border-border-subtle flex flex-col sm:flex-row sm:justify-between gap-3 text-xs text-fg-muted">
-          <p>© 2026 АРЕНА ДРОНОВ. Все права защищены.</p>
-          <p className="font-mono">v0.1.0 · MVP</p>
         </div>
       </div>
     </footer>

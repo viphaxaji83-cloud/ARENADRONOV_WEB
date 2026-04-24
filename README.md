@@ -44,7 +44,7 @@ src/
 ## Демо-маршруты
 
 - `/` — главная
-- `/tournaments` · `/tournaments/moscow-spring-cup-2026` — список и страница турнира
+- `/tournaments` · `/tournaments/spring-cup-2026` — список и страница турнира
 - `/leaderboard` — рейтинг сезона
 - `/pilots` · `/pilots/vortex` — список и профиль пилота
 - `/news` · `/news/season-2026-opens` — новости
